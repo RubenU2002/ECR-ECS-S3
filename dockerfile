@@ -1,5 +1,5 @@
-# Use the official Node.js 16 image as the base image
-FROM node:16
+# Use the official Node.js 16 Alpine image as the base image
+FROM node:16-alpine
 
 # Set the working directory
 WORKDIR /app
@@ -10,10 +10,10 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --only=production
 
-
 # Copy the rest of the application code
 COPY . .
-# Copiar el archivo .env a la imagen
+
+# Copy the .env file to the image
 COPY .env .env
 
 # Expose the port the app runs on
