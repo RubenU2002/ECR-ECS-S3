@@ -10,8 +10,11 @@ COPY package*.json ./
 # Install dependencies
 RUN npm install --only=production
 
+
 # Copy the rest of the application code
 COPY . .
+# Copiar el archivo .env a la imagen
+COPY .env .env
 
 # Expose the port the app runs on
 EXPOSE 4500
