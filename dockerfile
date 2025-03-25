@@ -13,9 +13,6 @@ RUN npm install --only=production
 # Copy the rest of the application code
 COPY . .
 
-# Copy the .env file to the image
-COPY .env .env
-
 # Expose the port the app runs on
 EXPOSE 4500
 
